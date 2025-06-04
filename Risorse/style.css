@@ -44,8 +44,44 @@ header {
         transition: all 0.3s ease-in-out;
     }
     button:hover {
-        background-color: crimson;
+        /*background-color: crimson;*/
+        animation: colorChange 4s infinite;
         font-size: 1.1rem;
     }
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: rgb(74, 211, 74);
+    }
+    33% {
+        background-color: antiquewhite;
+    }
+    66% {
+        background-color: rgb(238, 69, 69);
+    }
+    100% {
+        background-color: rgb(74, 211, 74);
+    }
+}
+
+nav {
+    background-color: antiquewhite;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    ul {
+        
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
 }
 

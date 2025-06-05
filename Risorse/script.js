@@ -8,7 +8,6 @@ function manageTrack() {
 
     // Movimento lineare infinito
     let speed = 1.3; // pixel per step
-    let moving = true;
 
     function move() {
 
@@ -27,19 +26,6 @@ function manageTrack() {
         requestAnimationFrame(move); 
     }
     move();
-
-    // Pausa durante lo scroll manuale
-    /*
-    let scrollTimeout;
-    gallery.addEventListener('scroll', () => {
-        moving = false;
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            moving = true;
-            move();
-        }, 1500);
-    });
-    */
 }
 
 manageTrack();

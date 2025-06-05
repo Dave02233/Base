@@ -20,6 +20,8 @@ header {
 
     background-color:sandybrown;
 
+    border-bottom: 1px solid gold;
+
     h1 {
         margin-left: 2rem;
         font-size: 3rem;
@@ -44,9 +46,11 @@ header {
         transition: all 0.3s ease-in-out;
     }
     button:hover {
-        /*background-color: crimson;*/
         animation: colorChange 4s infinite;
         font-size: 1.1rem;
+        box-shadow: 3px 3px 2px 1px;
+
+        cursor: pointer;
     }
 }
 
@@ -66,14 +70,50 @@ header {
 }
 
 nav {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
     background-color: antiquewhite;
 
     width: 100%;
 
     overflow: hidden;
 
+    border-bottom: 1px solid gold;
+
     ul {
-        
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+
+        li {
+            width: 100%;
+            height: 100%;
+            padding: 0.5rem 0;
+
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            font-style: italic;
+            letter-spacing: 0.08rem;
+            color: rgb(107, 55, 18);
+
+            transition: all 0.2s ease-in-out;
+        }
+        li:hover {
+            color:rgb(237, 176, 132);
+            background-color: rgb(107, 55, 18);
+
+            cursor: pointer;
+        }
     }
 }
 
@@ -81,7 +121,52 @@ nav {
     display: none;
 }
 
-.visible {
-    display: block;
+#gallery {
+    display: flex;
+    flex-direction: row;
+
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    width: 100%;
+    height: 32rem;
+
+    .gallery-track {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        transition: none;
+        transform: none;
+    }
+
+    img {
+        max-width: 34rem;
+        object-fit: cover;
+        image-rendering: optimizeSpeed;
+    }
+
+    /*solo Firefox*/
+    scrollbar-width: thin; 
+    scrollbar-color: chocolate antiquewhite; 
 }
+
+#gallery::-webkit-scrollbar {
+    height: 12px;
+    background: antiquewhite;
+}
+#gallery::-webkit-scrollbar-thumb {
+    background: chocolate;
+    border-radius: 6px;
+    border: 2px solid gold;
+}
+#gallery::-webkit-scrollbar-track {
+    background: antiquewhite;
+    border-radius: 6px;
+}
+
+
+
+
 

@@ -168,5 +168,26 @@ nav {
 
 
 
+@media only screen and (max-width: 768px) {
+    html{
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 675px) {
+    #gallery {
+        height: 20rem;
+    }
+}
+
+
+@media only screen and (max-width: 426px) {
+    html{
+        font-size: 13px;
+    }
+    #gallery {
+        height: 18rem;
+    }   
+}
 
 

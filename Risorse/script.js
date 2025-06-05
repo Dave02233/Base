@@ -29,9 +29,8 @@ function manageTrack() {
         // Funzione JS nativa per eseguire animazioni (standard 60Hz)
         requestAnimationFrame(move); 
     }
-    move();
+    // Avvia l'animazione dopo 4 secondi dal caricamento
+    setTimeout(move, 3500);
 }
-
-// Avvia l'animazione dopo 4 secondi dal caricamento
-setTimeout(manageTrack, 4000);
+manageTrack();
 

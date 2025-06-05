@@ -15,12 +15,14 @@ function manageTrack() {
         speed < 1.3 ? speed += 0.005 : speed = 1.3;
         //console.log(speed);
         const firstImg = track.firstElementChild;
+        const secondImg = track.children[1];
 
-        if (firstImg) {
-            const firstImgWidth = firstImg.offsetWidth;
-            if (gallery.scrollLeft >= firstImgWidth) {
+        if (firstImg && secondImg) {
+            const firstTwoImgWidth = firstImg.offsetWidth + secondImg.offsetWidth;
+            if (gallery.scrollLeft >= firstTwoImgWidth) {
                 track.appendChild(firstImg);
-                gallery.scrollLeft -= firstImgWidth;
+                track.appendChild(secondImg);
+                gallery.scrollLeft -= firstTwoImgWidth;
             }
         }
 

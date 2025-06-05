@@ -193,11 +193,13 @@ section {
 .text-img {
     padding: 1rem;
     margin: 3rem 2rem;
-    height: 22rem;
+    height: 30rem;
 
     display: flex;
+    flex-wrap: wrap;
 
     justify-content: space-between;
+    align-items: center;
 
     border-radius: 25px;
     border: 1px solid chocolate;
@@ -206,6 +208,8 @@ section {
 
     div {
         color: antiquewhite;
+        width: auto;
+        align-self: start;
 
         h2 {
             font-size: 2.2rem;
@@ -219,7 +223,8 @@ section {
 
     img {
         border-radius: 25px;
-        width: auto;
+        max-height: 80%;
+        max-width: 80%;
         filter: brightness(0.8) contrast(1.2); 
     }
 }
@@ -259,11 +264,19 @@ section {
     z-index: 1;
 }
 
-
+@media only screen and (max-width: 1090px) {
+    .text-img{
+        height: 40rem;
+        justify-content: center;
+    }
+}
 
 @media only screen and (max-width: 768px) {
     html{
         font-size: 15px;
+    }
+    .text-img{
+        height: 35rem;
     }
 }
 
@@ -271,6 +284,20 @@ section {
     #gallery {
         height: 20rem;
     }
+    
+    .text-img{
+        height: 30rem;
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    .text-img{
+        height: 25rem;
+    }
+    .text-img img {
+        max-height: 90%;
+        max-width: 90%;
+    }   
 }
 
 
@@ -282,5 +309,13 @@ section {
         height: 18rem;
     }   
 }
+
+@media only screen and (max-width: 370px) {
+    .text-img img {
+        max-height: 100%;
+        max-width: 100%;
+    }   
+}
+
 
 

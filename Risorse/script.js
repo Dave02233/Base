@@ -1,3 +1,10 @@
+//Toggle visibilità menù
+function toggleMenu() {
+    const menu = document.querySelector('nav');
+    if (!menu) return;
+    menu.classList.toggle('hidden')
+}
+
 // Gestione track infinito di immagini
 function manageTrack() {
 

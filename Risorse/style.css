@@ -1,6 +1,8 @@
 html {
     margin: 0;
     padding: 0;
+
+    scroll-snap-type: y proximity;
 }
 
 body {
@@ -8,11 +10,19 @@ body {
     padding: 0;
 
     background-color: antiquewhite;
+    
 }
 
 header {
     width: 100%;
     height: 5rem;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    /*scroll-snap-align: start;*/
 
     display: inline-flex;
     justify-content: space-between;
@@ -35,7 +45,7 @@ header {
 
         box-shadow: 2px 2px ;
 
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 400;
 
         border-radius: 4px;
@@ -47,7 +57,7 @@ header {
     }
     button:hover {
         animation: colorChange 4s infinite;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         box-shadow: 3px 3px 2px 1px;
 
         cursor: pointer;
@@ -74,6 +84,11 @@ nav {
     padding: 0;
     margin: 0;
 
+    position: sticky;
+    top: 5rem;
+    left: 0;
+    z-index: 1;
+
     display: flex;
     flex-direction: column;
 
@@ -82,11 +97,10 @@ nav {
 
     background-color: antiquewhite;
 
-    width: 100%;
-
     overflow: hidden;
 
     border-bottom: 1px solid gold;
+    box-shadow: 0px 0px 100vh rgb(115, 108, 108);
 
     ul {
         list-style: none;
@@ -121,9 +135,18 @@ nav {
     display: none;
 }
 
+section {
+    scroll-snap-align: center;
+    /*Punto di snap più basso per nav*/
+    padding-top: 7rem !important;
+}
+
 #gallery {
     display: flex;
     flex-direction: row;
+
+    scroll-snap-align: unset;
+    padding-top: 0 !important;
 
     position: relative;
     overflow-x: hidden;
@@ -147,11 +170,12 @@ nav {
         image-rendering: optimizeSpeed;
     }
 
-    /*solo Firefox*/
+    /*scrollbar solo Firefox*/
     scrollbar-width: thin; 
     scrollbar-color: chocolate antiquewhite; 
 }
 
+/*Style della scrollbar, non più utilizzato*/
 #gallery::-webkit-scrollbar {
     height: 12px;
     background: antiquewhite;
@@ -164,6 +188,60 @@ nav {
 #gallery::-webkit-scrollbar-track {
     background: antiquewhite;
     border-radius: 6px;
+}
+
+.text-img {
+    padding: 1rem;
+    margin: 3rem 2rem;
+    height: 20rem;
+
+    display: flex;
+
+    border-radius: 25px;
+
+    position: relative;
+
+    div {
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 800;
+        }
+        p {
+            font-size: 1rem;
+            font-style: italic;
+        }
+    }
+    img {
+
+    }
+}
+
+.text-img::before {
+    content: "";
+    position: absolute;
+    /*shorthand per la posizione in absolute*/
+    inset: 0;
+
+    overflow: hidden;
+    /*url sfondo*/
+    background-size: cover;
+    background-color: burlywood;
+
+    filter: blur(3px) brightness(0.7);
+    z-index: 0;
+
+    border-radius: 25px;
+    /*Nessun blocco click da parte dell'overlay, molto utile*/
+    pointer-events: none;
+}
+
+.text-img#firstSection::before {
+    background-image: url("./images/pattern.png");
+}
+
+/*Tutti i child sopra al filtro*/
+.text-img > * {
+    z-index: 1;
 }
 
 

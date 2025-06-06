@@ -320,6 +320,58 @@ section {
     z-index: 1;
 }
 
+#contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+
+    height: 20rem;
+
+    border: 1px solid chocolate;
+    border-radius: 25px;
+
+    margin: 3rem 2rem;
+    padding: 1rem;
+
+    color: antiquewhite;
+
+    z-index: 0;
+
+    h3 {
+        font-size: 2.2rem;
+    }
+    p {
+        font-size: 1.3rem;
+        font-style: italic;
+    }
+}
+
+#contacts::before {
+    content: "";
+    position: absolute;
+    /*shorthand per la posizione in absolute*/
+    inset: 0;
+
+    overflow: hidden;
+    
+    background-image: url("./images/contacts.jpg");
+    background-size: cover;
+
+    background-color: burlywood;
+
+    filter: blur(3px) brightness(0.7);
+    z-index: 0;
+
+    border-radius: 25px;
+    /*Nessun blocco click da parte dell'overlay, molto utile*/
+    pointer-events: none;
+
+}
+#contacts > * {
+    z-index: 1;
+}
+
 
 @media only screen and (max-width: 1090px) {
     .text-img{

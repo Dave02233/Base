@@ -22,7 +22,7 @@ header {
     left: 0;
     z-index: 3;
 
-    /*scroll-snap-align: start;*/
+    scroll-snap-align: start;
 
     display: inline-flex;
     justify-content: space-between;

@@ -11,14 +11,14 @@
 <body>
     <header class="shrink">
         <h1><span style="color: green;">Piz</span><span style="color: antiquewhite;">ze</span><span style="color: red;">ria</span></h1>
-        <button onclick="toggleMenu()">Menù</button>
+        <button type="button" onclick="toggleMenu()">Menù</button>
     </header>
     <nav class="hidden">
         <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
+            <li><a href="#firstSection" onclick="toggleMenu()">Impasto<a></li>
+            <li><a href="#secondSection" onclick="toggleMenu()">Pizze</a></li>
+            <li><a href="#thirdSection" onclick="toggleMenu()">Staff</a></li>
+            <li><a href="#contacts" onclick="toggleMenu()">Contatti</a></li>
         </ul>
     </nav>
     <section id="gallery">

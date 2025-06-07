@@ -15,7 +15,7 @@ body {
 
 header {
     width: 100%;
-    height: 5rem;
+    /*height: 5rem;*/
 
     position: sticky;
     top: 0;
@@ -32,9 +32,13 @@ header {
 
     border-bottom: 1px solid gold;
 
+    > * {
+        transition: font-size 0.2s ease-in-out;
+    }
+
     h1 {
-        margin-left: 2rem;
-        font-size: 3rem;
+        margin: 0.3em 0 0.3em 2rem;
+        font-size: 3.5rem;
     }
 
     button {
@@ -45,7 +49,7 @@ header {
 
         box-shadow: 2px 2px ;
 
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         font-weight: 400;
 
         border-radius: 4px;
@@ -57,7 +61,7 @@ header {
     }
     button:hover {
         animation: colorChange 4s infinite;
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         box-shadow: 3px 3px 2px 1px;
 
         cursor: pointer;
@@ -79,13 +83,22 @@ header {
     }
 }
 
+.shrink {
+    h1 {
+        font-size: 2rem;
+    }
+    button {
+        font-size: 1rem;
+    }
+}
+
 nav {
     width: 100%;
     padding: 0;
     margin: 0;
 
     position: sticky;
-    top: 5rem;
+    top: 6rem;
     left: 0;
     z-index: 2;
 
@@ -284,7 +297,9 @@ section {
 
     div {
         align-self: flex-start;
+        justify-self: flex-end;
         margin-right: 3rem;
+        text-align: right;
 
         h2 {
             font-size: 2.2rem;
@@ -372,11 +387,23 @@ section {
     z-index: 1;
 }
 
+@media only screen and (min-width: 1900px) {
+    html {
+        font-size: 23px !important;
+    }
+}
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 1480px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+
+@media only screen and (max-width: 1220px) {
     .text-img{
-        height: 40rem;
-        justify-content: center;
+        height: 24rem;
+        justify-content: space-between;
         text-align: center;
 
         img {
@@ -386,13 +413,23 @@ section {
     }
 }
 
+@media only screen and (max-width: 1155px) {
+    .text-img{
+        justify-content: center;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     html{
         font-size: 15px;
     }
     .text-img{
-        height: 35rem;
+        height: 28rem;
     }
+    .text-img img {
+        max-height: 70%;
+        max-width: 70%;
+    }   
 }
 
 @media only screen and (max-width: 675px) {
@@ -407,7 +444,7 @@ section {
 
 @media only screen and (max-width: 510px) {
     .text-img{
-        height: 25rem;
+        height: 28rem;
     }
     .text-img img {
         max-height: 90%;
@@ -422,6 +459,16 @@ section {
     }
     #gallery {
         height: 18rem;
+    }   
+    #location {
+        padding: 0.4rem;
+        div{
+            margin-right: 0.5rem;
+        }
+    }   
+    #contacts {
+        padding: 0.4rem;
+        gap: 0.5rem;
     }   
 }
 

@@ -31,6 +31,8 @@ function manageTrack() {
                 track.appendChild(secondImg);
                 gallery.scrollLeft -= firstTwoImgWidth;
             }
+        }else{
+            throw new Error('Come fa a non esistere?')
         }
 
         // Funzione JS nativa per eseguire animazioni (standard 60Hz)
@@ -40,4 +42,5 @@ function manageTrack() {
     setTimeout(move, 3500);
 }
 manageTrack();
+
 
